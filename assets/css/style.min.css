@@ -287,6 +287,10 @@ h2 {
     transition: background-color .25s
 }
 
+.button-load {
+    display: block;
+}
+
 .button:hover {
     background-color: #ececec
 }

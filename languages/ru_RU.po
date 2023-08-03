@@ -224,56 +224,56 @@ msgstr ""
 
 #: functions.php:282
 msgid "Search Period"
-msgstr ""
+msgstr "Искать период"
 
 #: functions.php:283
 msgid "Popular Period"
-msgstr ""
+msgstr "Популярный период"
 
 #: functions.php:284
 msgid "All Periods"
-msgstr ""
+msgstr "Все периоды"
 
 #: functions.php:287
 msgid "Edit Period"
-msgstr ""
+msgstr "Редактировать период"
 
 #: functions.php:288
 msgid "Update Period"
-msgstr ""
+msgstr "Обновить период"
 
 #: functions.php:289
 msgid "Add New Period"
-msgstr ""
+msgstr "Добавить новый период"
 
 #: functions.php:290
 msgid "New Period Name"
-msgstr ""
+msgstr "Имя для нового периода"
 
 #: functions.php:291
 msgid "Separate Periods with commas"
-msgstr ""
+msgstr "Разделяйте периоды запятыми"
 
 #: functions.php:292
 msgid "Add or remove Periods"
-msgstr ""
+msgstr "Добавить или удалить периоды"
 
 #: functions.php:293
 msgid "Choose from the most used Periods"
-msgstr ""
+msgstr "Выберите один из наиболее часто используемых периодов"
 
 #: functions.php:294
 msgid "Periods"
-msgstr ""
+msgstr "Срок сдачи"
 
 #: functions.php:331
 msgid "Sidebar"
-msgstr ""
+msgstr "Сайдбар"
 
 #: functions.php:333 functions.php:425 functions.php:436 functions.php:449
 #: functions.php:461 functions.php:474
 msgid "Add widgets here."
-msgstr ""
+msgstr "Добавить виджет"
 
 #: functions.php:423
 msgid "Sidebar on the main"
@@ -349,7 +349,7 @@ msgstr ""
 
 #: inc/template-tags.php:63
 msgid ", "
-msgstr ""
+msgstr ","
 
 #: inc/template-tags.php:66
 #, php-format

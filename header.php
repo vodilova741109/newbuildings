@@ -32,11 +32,10 @@
 
             <div class="page-breadcrumb" itemprop="breadcrumb">
                 <?php
-                $nav = wp_nav_menu('echo=0');
-                $nav = preg_replace('#<li\s(.+)><a\s(.+</a>)</li>#siU', '<a $1 $2', $nav);
-                preg_match_all('#(<a.+/a>)#siU', $nav, $matches);
-                $nav = implode(' > ', $matches[1]);
-                echo $nav;            ?>
+                if( function_exists('the_breadcrumbs')) the_breadcrumbs();
+                ?>
+
+
             </div>
 
             <div class="page-top__switchers">

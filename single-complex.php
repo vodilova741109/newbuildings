@@ -19,26 +19,27 @@ get_header('post');
                 <div class="article-wrapp">
                     <div class="post-header__details">
                         <div class="address"><?php the_field('address_cmp'); ?></div>
-                        <?php
-                        $metro = get_field_object('metro_select');                      
-                        $value = $metro['value'];
-                        foreach ($value as $row) : ?>
-                        <div class="metro">
-                            <?php  if( $row != 'Сокол 25 мин.' ) {?>
-                            <span class="icon-metro icon-metro--red"></span>
-                            <?= $row?>
-                            <span class="icon-bus"></span>
-                            <?php } ?>
-                            <?php  if( $row == 'Сокол 25 мин.' ) {?>
-                            <span class="icon-metro icon-metro--green"></span>
-                            <?= $row?>
-                            <span class="icon-bus"></span>
-                            <?php } ?>
 
+                        <div class="metro"><span
+                                class="icon-metro icon-metro--<?php echo (get_field('metro_new')['color']); ?>"></span><?php echo (get_field('metro_new')['metro_select']); ?>
+                            <span> <?php echo (get_field('metro_new')['metro_min']); ?><span
+                                    class="icon-walk-icon"></span></span>
                         </div>
-                        <?php endforeach; ?>
+
+                        <div class="metro"><span
+                                class="icon-metro icon-metro--<?php echo (get_field('metro_2')['color']); ?>"></span><?php echo (get_field('metro_2')['metro_select']); ?>
+                            <span> <?php echo (get_field('metro_2')['metro_min']); ?><span
+                                    class="icon-bus"></span></span>
+                        </div>
+
+                        <div class="metro"><span
+                                class="icon-metro icon-metro--<?php echo (get_field('metro_3')['color']); ?>"></span><?php echo (get_field('metro_3')['metro_select']); ?>
+                            <span> <?php echo (get_field('metro_3')['metro_min']); ?><span
+                                    class="icon-bus"></span></span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="post-image">
                     <?php
                     while ( have_posts() ) :
@@ -53,11 +54,12 @@ get_header('post');
                                 echo get_template_directory_uri().'/assets/img/img-default.png';
                             }
                             ?>">
-                    <!-- получаем id поста -->
+
 
                     <div class="page-loop__item-badges">
+
                         <span class="badge">Услуги 0%</span>
-                        <span class="badge">Комфорт+</span>
+                        <span class="badge"><?php  echo (get_field('harakteristiki')['otdelka']); ?>+</span>
                     </div>
 
                     <a href="#" class="favorites-link favorites-link__add" title="Добавить в Избранное" role="button">
@@ -66,6 +68,8 @@ get_header('post');
 
                 </div>
 
+
+
                 <h2 class="page-title-h1">Характеристики ЖК</h2>
 
                 <ul class="post-specs">
@@ -73,14 +77,14 @@ get_header('post');
                         <span class="icon-building"></span>
                         <div class="post-specs__info">
                             <span>Класс жилья</span>
-                            <p>Комфорт</p>
+                            <p><?php  echo (get_field('harakteristiki')['klass']); ?> </p>
                         </div>
                     </li>
                     <li>
                         <span class="icon-brick"></span>
                         <div class="post-specs__info">
                             <span>Конструктив</span>
-                            <p>Монолит-кирпич</p>
+                            <p><?php  echo (get_field('harakteristiki')['konstruktiv']); ?></p>
                         </div>
                     </li>
                     <li>
@@ -88,9 +92,9 @@ get_header('post');
                         <div class="post-specs__info">
                             <span>Отделка</span>
                             <p>
-                                Чистовая
+                                <?php  echo (get_field('harakteristiki')['otdelka']); ?>
                                 <span class="tip tip-info" data-toggle="popover" data-placement="top"
-                                    data-content="And here's some amazing content. It's very engaging. Right?">
+                                    data-content="Укажите свой текст">
                                     <span class="icon-prompt"></span>
                                 </span>
                             </p>
@@ -114,7 +118,13 @@ get_header('post');
                         <span class="icon-parking"></span>
                         <div class="post-specs__info">
                             <span>Подземный паркинг</span>
-                            <p>Присутствует</p>
+                            <p><?php
+                            if((get_field('harakteristiki')['parking'])){
+                                echo 'Присутствует';
+                            } else {
+                                echo 'Отсутствует'; 
+                            }
+                           ; ?></p>
                         </div>
                     </li>
                     <li>
@@ -129,7 +139,8 @@ get_header('post');
                         <span class="icon-wallet"></span>
                         <div class="post-specs__info">
                             <span>Ценовая группа</span>
-                            <p>Выше среднего</p>
+                            <p><?php  echo (get_field('harakteristiki')['czenovaya_gruppa']); ?></p>
+
                         </div>
                     </li>
                     <li>
